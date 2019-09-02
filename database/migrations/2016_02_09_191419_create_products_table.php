@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
             $table->timestamps();
         });
 		
-		Schema::table('products', function (Blueprint $table) {
-			$table->integer('brand_id')->unsigned()->index();
-			$table->foreign('brand_id')->references('id')->on('brands');
-        });
+		// Schema::table('products', function (Blueprint $table) {
+			// $table->integer('brand_id')->unsigned()->index();
+			// $table->foreign('brand_id')->references('id')->on('brands');
+        // });
     }
 
     /**

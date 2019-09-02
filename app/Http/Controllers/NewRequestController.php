@@ -47,7 +47,7 @@ class NewRequestController extends Controller {
 			'product' 	=> ucwords($request->product),
 			'variant'	=> ucwords($request->variant),
 			'age'		=> $request->age,
-			'pincode'	=> $request->pincode,
+			// 'pincode'	=> $request->pincode,
 			'status'	=> $request->status,
 			'user_id'	=> $request->user_id,
 		]);

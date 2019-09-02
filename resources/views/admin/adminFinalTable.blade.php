@@ -6,11 +6,12 @@
 		<table id="example1" class="table table-bordered table-striped">
 			<thead>
 				<tr>
+					<th>Name</th>
+					<th>Address</th>
 					<th>Request Date</th>
 					<th>Brand</th>
 					<th>Product</th>
 					<th>Variant</th>
-					<th>Pincode</th>
 					<th>Technician</th>
 					<th>Status</th>
 					<th>Rating</th>
@@ -19,11 +20,12 @@
 			<tbody>
 				@foreach($serviceCompletes as $service)
 				<tr>
+					<td><a href="profile/{{$service->user_id}} ">{{App\User::find($service->user_id)->name}}</a></td>
+					<td>{{App\User::find($service->user_id)->address}}</td>
 					<td>{{$service->created_at}}</td>
 					<td>{{$service->brand}}</td>
 					<td>{{$service->product}}</td>
 					<td>{{$service->variant}}</td>
-					<td>{{$service->pincode}}</td>
 					<td>{{$service->technician}}</td>
 					
 					@if($service->status == "Pending")
@@ -56,11 +58,12 @@
 			</tbody>
 			<tfoot>
 				<tr>
+					<th>Name</th>
+					<th>Address</th>
 					<th>Request Date</th>
 					<th>Brand</th>
 					<th>Product</th>
 					<th>Variant</th>
-					<th>Pincode</th>
 					<th>Technician</th>
 					<th>Status</th>
 					<th>Rating</th>

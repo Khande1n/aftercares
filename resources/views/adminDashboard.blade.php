@@ -11,7 +11,7 @@
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
-		<h1> Dashboard <small>Last Visited</small></h1>
+		<h1> Dashboard <small><!-- Last Visited --></small></h1>
 	</section>
 
 	<!-- Main content -->
@@ -40,12 +40,14 @@
 							<table class="table no-margin">
 								<thead>
 									<tr>
+										<th>Name</th>
+										<th>Address</th>
 										<th>Request Date</th>
 										<th>Brand</th>
 										<th>Product</th>
 										<th>Variant</th>
-										<th>Pincode</th>
 										<th>Technician</th>
+										<th>Info</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -57,11 +59,12 @@
 									<tr>
 										<form role="form" method="PATCH" action="admin/update/{id}" >
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<td><a href="profile/{{$service->user_id}} ">{{App\User::find($service->user_id)->name}}</a></td>
+										<td>{{App\User::find($service->user_id)->address}}</td>
 										<td><!-- <a href="{{url('admin/{$service->id}')}}"> -->{{$service->created_at}}</a></td>
 										<td>{{$service->brand}}</td>
 										<td>{{$service->product}}</td>
 										<td>{{$service->variant}}</td>
-										<td>{{$service->pincode}}</td>
 										<td>
 											<select class="form-control select2" data-placeholder="Select Technician" name="technician" id="technician" style="width: 100%;">
 												@foreach($technicians as $technician)
@@ -69,6 +72,8 @@
 												@endforeach	
 											</select>
 										</td>
+										
+										<td>{{$service->detail}}</td>
 										
 										@if($service->status == "Pending")
 										<td><span class="label label-warning">{{$service->status}}</span></td>

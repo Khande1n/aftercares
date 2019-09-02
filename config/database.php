@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'tracker'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
             'prefix'   => '',
         ],
 
-        'mysql' => [
+        'mysdfsdsql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
@@ -65,6 +65,36 @@ return [
             'strict'    => false,
         ],
 
+		
+		        
+		'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('RDS_HOST', 'aftercares.cwzftbtxn34z.us-west-2.rds.amazonaws.com'),
+            'port'   	=> env('RDS_PORT', '3306'),
+            'database'  => env('RDS_DATABASE', 'aftercares'),
+            'username'  => env('RDS_USERNAME', 'dbaftercares'),
+            'password'  => env('RDS_PASSWORD', 'dbaftercarespassword'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+        
+		
+		'tracker' => [
+            'driver'    => 'mysql',
+            'host'      => env('RDS_HOST', 'aftercares.cwzftbtxn34z.us-west-2.rds.amazonaws.com'),
+            'port'   	=> env('RDS_PORT', '3306'),
+            'database'  => env('RDS_DATABASE', 'aftercares'),
+            'username'  => env('RDS_USERNAME', 'dbaftercares'),
+            'password'  => env('RDS_PASSWORD', 'dbaftercarespassword'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
@@ -75,6 +105,7 @@ return [
             'prefix'   => '',
             'schema'   => 'public',
         ],
+
 
         'sqlsrv' => [
             'driver'   => 'sqlsrv',

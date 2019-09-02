@@ -1310,7 +1310,7 @@
 /* Basic */
 
 	body {
-		background-color: #39cccc;
+		background-color: #87CEFA;
 		/*background-image: url("images/website-background1.jpg"), url("../../images/website-background1.jpg");*/
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -1697,7 +1697,7 @@
 		position: relative;
 		display: inline-block;
 		border: 0;
-		background: #35b88f;
+		background: #1E90FF;
 		color: #fff;
 		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
 		cursor: pointer;
@@ -2001,14 +2001,14 @@
 		color: #fff;
 		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
 		text-align: center;
-		background: #35b88f url("images/banner.svg") bottom center no-repeat;
+		background: #1E90FF url("images/banner.svg") bottom center no-repeat;
 		padding: 5em 0 5em 0;
 		margin: 0;
 		background-size: 125% auto;
 	}
 
 		#banner .button {
-			color: #35b882;
+			color: #3a3939;
 			text-shadow: 0 0 0.5px rgba(53, 184, 130, 0.25);
 		}
 
@@ -2251,8 +2251,8 @@
 		/* Basic */
 
 			body {
-				background-color: #203936;
-				background-image: url("images/overlay.png"), url("../../images/bg-alt.jpg");
+				background-color: #87CEFA;
+				/*background-image: url("images/overlay.png"), url("../../images/bg-alt.jpg");*/
 				background-repeat: repeat, no-repeat;
 				background-size: auto, 100% auto;
 				background-position: top left, top center;

@@ -21,11 +21,12 @@
 					<table class="table no-margin">
 						<thead>
 							<tr>
+								<th>Name</th>
+								<th>Address</th>
 								<th>Request Date</th>
 								<th>Brand</th>
 								<th>Product</th>
 								<th>Variant</th>
-								<th>Pincode</th>
 								<th>Technician</th>
 								<th>Status</th>
 								<th>Action</th>
@@ -38,11 +39,12 @@
 							<tr>
 								<form role="form" method="POST" action="/complete" >
 									<input type="hidden" name="_token" value="{{ csrf_token() }}">
+									<td><a href="profile/{{$service->user_id}}">{{App\User::find($service->user_id)->name}}</a></td>
+									<td>{{App\User::find($service->user_id)->address}}</td>
 									<td><!-- <a href="{{url('admin/{$service->id}')}}"> -->{{$service->created_at}}</a></td>
 									<td>{{$service->brand}}</td>
 									<td>{{$service->product}}</td>
 									<td>{{$service->variant}}</td>
-									<td>{{$service->pincode}}</td>
 									<td>{{$service->technician}}</td>
 									
 									<td>

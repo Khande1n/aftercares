@@ -18,10 +18,10 @@ class CreateVariantsTable extends Migration
             $table->timestamps();
         });
 		
-		Schema::table('variants', function (Blueprint $table) {
-			$table->integer('product_id')->unsigned()->index();
-			$table->foreign('product_id')->references('id')->on('products');
-        });
+		// Schema::table('variants', function (Blueprint $table) {
+			// $table->integer('product_id')->unsigned()->index();
+			// $table->foreign('product_id')->references('id')->on('products');
+        // });
     }
 
     /**

@@ -96,7 +96,13 @@ class AuthController extends Controller {
 		if(Auth::user()->role_id == '2'){
 			return property_exists($this, 'redirectTo') ? $this->redirectTo : '/adminDashboard';
 		}else{
-			return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+			if (!isset($_COOKIE['firsttime']))
+				{
+    				setcookie("firsttime", "no");
+    				return property_exists($this, 'redirectTo') ? $this->redirectTo : '/profile';
+				}else{
+					return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+				}	
 		}    
     }
 

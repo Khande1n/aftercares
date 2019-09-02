@@ -12,9 +12,9 @@ Hello,
 
 <p>Variant: {{$services->variant}}</p>
 
-<p>Age of Product: {{$services->age}}</p>
+<p>Year of Purchase: {{$services->age}}</p>
 
-<p>Pincode: {{$services->pincode}}</p>
+<p>Extra Info: {{$services->detail}}</p>
 
 
 <p>Thank you for using our services.</p>

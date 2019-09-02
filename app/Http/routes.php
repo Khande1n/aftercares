@@ -52,6 +52,8 @@ Route::group(['middleware' => 'web'], function () {
 	
 	Route::resource('newrequest', 'NewRequestController');
 	
+	Route::get('admin/update/{id}', 'AdminController@update');
+	
 	Route::get('/profile/update/{id}', 'UserProfileController@update');
 	
 	Route::resource('profile', 'UserProfileController');
@@ -60,15 +62,24 @@ Route::group(['middleware' => 'web'], function () {
 	
 	Route::resource('rent', 'RentController');
 	
+	Route::post('{user_id}/{product}/{status}/photo', 'RentController@addPhoto');
+	
+	Route::get('{user_id}/{product}/{status}', 'RentController@show');
+	
+	Route::delete('photos/{id}', 'PhotoController@destroy');
+	
+	Route::get('rentalAd', 'RentController@rentAd');
+	
 	Route::post('email/home', 'UserProfileController@sendEmailHome');
 	
 	Route::post('email/adminDashboard', 'AdminController@sendEmailHome');
 	
-	Route::resource('admin/update/{id}', 'AdminController@update');
+	Route::resource('tracker', 'TrackerController');
 	
 	Route::post('admin/createTechnician', 'AdminController@store');
 	
 	Route::resource('/complete', 'AdminController@requestStatus');
 	
 	Route::post('website/email', 'WebsiteController@websiteEmail');
+		
 });

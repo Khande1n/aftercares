@@ -24,6 +24,18 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/sweetalert/sweetalert.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/css/AdminLTE.min.css')}}">
+    <!-- Pic Upload style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css">
+    
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{asset('assets/iCheck/flat/blue.css')}}">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{{asset('assets/morris/morris.css')}}">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{asset('assets/datepicker/datepicker3.css')}}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{asset('assets/daterangepicker/daterangepicker-bs3.css')}}">
+
     <!-- bootstrap wysihtml5 - text editor -->
     <!-- <link rel="stylesheet" href="{{asset('assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}"> -->
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -36,7 +48,27 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+    <!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+	fbq('init', '1715413852048649');
+	fbq('track', "PageView");fbq('track', 'Lead');</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1715413852048649&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Facebook Pixel Code -->
+    
+      
   </head>
+  
+  
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
@@ -73,15 +105,15 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('images/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                  <img src="{{asset('images/logoaf.png')}}" class="user-image" alt="User Image">
                   <span class="hidden-xs">{{Auth::user()->name}}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{{asset('images/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                    <img src="{{asset('images/logoaf.png')}}" class="img-circle" alt="User Image">
                     <p>
-                      {{Auth::user()->contact}}
+                      {{Auth::user()->name}}
                       <small>Member since {{Auth::user()->created_at}}</small>
                     </p>
                   </li>
@@ -111,7 +143,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="{{asset('images/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+              <img src="{{asset('images/logoaf.png')}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>{{Auth::user()->name}}</p>
@@ -142,6 +174,16 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
+            
+             @if(Auth::user()->role_id == '2')
+             <li class="treeview">
+              <a href="/tracker">
+                <i class="fa fa-edit"></i>
+                <span>Tracker</span>
+              </a>
+            </li>
+            @endif
+            
             <li class="treeview">
               <a href="/newrequest/create">
                 <i class="fa fa-edit"></i>
@@ -158,6 +200,12 @@
               <a href="/profile">
                 <i class="fa fa-user"></i>
                 <span>Profile</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="/rent">
+                <i class="fa fa-user"></i>
+                <span>Rent</span>
               </a>
             </li>
             <!-- <li><a href="/faqs"><i class="fa fa-book"></i> <span>FAQs</span></a></li> -->
@@ -236,6 +284,17 @@
     </script>
     
     @yield('jquery')
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77169364-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     
   </body>
 </html>

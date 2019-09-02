@@ -41,61 +41,56 @@
 								<div class="form-group">
 									<label>Brand</label>
 									<select class="form-control select2" data-placeholder="Select a Brand" name="brand" id="brand" style="width: 100%;">
-										<option>Samsung</option>
-										<option>Hitachi</option>
-										<option>Haier</option>
-										<option>LG</option>
-										<option>Panasonic</option>
-										<option>Voltas</option>
+										@foreach ($brandList as $brand)
+										<option> {{ $brand->brand }} </option>
+										@endforeach
 									</select>
 								</div><!-- /.form-group -->
 								<div class="form-group">
 									<label>Product</label>
 									<select class="form-control select2" data-placeholder="Select AC Type" name="product" id="product" style="width: 100%;">
-										<option selected="selected">Air Conditioner</option>
-										<option>Geyser</option>
-										<option>Refrigerator</option>
+										@foreach ($productList as $product)
+										<option selected="selected">{{ $product->product }}</option>
+										@endforeach
 									</select>
 								</div><!-- /.form-group -->
 								<div class="form-group">
 									<label>Variant</label>
 									<select class="form-control select2" data-placeholder="Select AC Type" name="variant" id="variant" style="width: 100%;">
-										<option selected="selected">Window</option>
-										<option>Split</option>
-										<option>Multi-Split</option>
-										<option>VRV</option>
-										<option>VRF</option>
+										@foreach ($variantList as $variant)
+										<option selected="selected">{{ $variant->variant }}</option>
+										@endforeach
 									</select>
 								</div><!-- /.form-group -->
 								<div class="form-group">
 									<label>Year of Purchase</label>
 									<select class="form-control select2" data-placeholder="Mention Year of Purchase" name="age" id="age" style="width: 100%;">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
-										<option>13</option>
-										<option>14</option>
-										<option>15</option>
-										<option>16</option>
-										<option>17</option>
-										<option>18</option>
-										<option>19</option>
-										<option>20</option>
-										<option>21</option>
+										<option>2016</option>
+										<option>2015</option>
+										<option>2014</option>
+										<option>2013</option>
+										<option>2012</option>
+										<option>2011</option>
+										<option>2010</option>
+										<option>2009</option>
+										<option>2008</option>
+										<option>2007</option>
+										<option>2006</option>
+										<option>2005</option>
+										<option>2004</option>
+										<option>2003</option>
+										<option>2002</option>
+										<option>2001</option>
+										<option>2000</option>
+										<option>1999</option>
+										<option>1998</option>
+										<option>1997</option>
+										<option>1996</option>
 									</select>
 								</div><!-- /.form-group -->
 								<div class="form-group">
-									<label>Address</label>
-									<input type="text" class="form-control" name="pincode" id="pincode" placeholder="Please enter your Pincode">
+									<label>Extra Info</label>
+									<input type="textarea" class="form-control" name="detail" id="detail" placeholder="Please enter your Pincode">
 								</div><!-- /.form-group -->
 								<input type="hidden" name="status" id="status" value="Pending">
 								<!-- /Initial Request Status -->
@@ -140,7 +135,7 @@
 			var product = $('#product').val();
 			var variant = $('#variant').val();
 			var age = $('#age').val();
-			var pincode = $('#pincode').val();
+			var detail = $('#detail').val();
 			var status = $('#status').val();
 			var user_id = $('#user_id').val();
 
@@ -151,7 +146,7 @@
 					product : product,
 					variant : variant,
 					age : age,
-					pincode : pincode,
+					detail : detail,
 					status: status,
 					user_id : user_id
 				},

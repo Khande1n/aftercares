@@ -53,8 +53,8 @@
 										<th>Brand</th>
 										<th>Product</th>
 										<th>Variant</th>
-										<th>Age</th>
-										<th>Pincode</th>
+										<th>Purchase</th>
+										<th>Info</th>
 										<th>Technician</th>
 										<th>Status</th>
 										<th>Rating</th>
@@ -69,7 +69,7 @@
 										<td>{{$service->product}}</td>
 										<td>{{$service->variant}}</td>
 										<td>{{$service->age}}</td>
-										<td>{{$service->pincode}}</td>
+										<td>{{$service->detail}}</td>
 										<td>{{$service->technician}}</td>
 										
 										@if($service->status == "Pending")
@@ -143,7 +143,7 @@
 			var product = $('#product').val();
 			var variant = $('#variant').val();
 			var age = $('#age').val();
-			var pincode = $('#pincode').val();
+			var detail = $('#detail').val();
 			var status = $('#status').val();
 			var user_id = $('#user_id').val();
 
@@ -154,7 +154,7 @@
 					product : product,
 					variant : variant,
 					age : age,
-					pincode : pincode,
+					detail : detail,
 					status: status,
 					user_id : user_id
 				},

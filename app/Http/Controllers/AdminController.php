@@ -64,9 +64,10 @@ class AdminController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, $id) {
-		$services = Service::findOrFail($request -> submit);
+		
+		$services = Service::findOrFail($request->submit);
 
-		$services -> update(['technician' => $request -> technician, 'status' => 'Working', ]);
+		$services -> update(['technician' => $request -> technician, 'status' => 'Working' ]);
 
 		$user = User::where('id', '=', $services -> user_id) -> get() -> first();
 
@@ -100,7 +101,7 @@ class AdminController extends Controller {
 
 		if (isset($services -> status)) {
 
-			Mail::send('auth/emails.statusChange', ['services' => $services], function($m) use ($user) {
+			Mail::send('auth/emails.statusChange', ['services' => $services], function($m) use ($services, $user) {
 
 				$m -> from('support@aftercares.in', 'Team AfterCares');
 

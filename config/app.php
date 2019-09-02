@@ -147,7 +147,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        
+        Intervention\Image\ImageServiceProvider::class,
+		PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+		
+		
         /*
          * Application Service Providers...
          */
@@ -156,6 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
+		
         
 
     ],
@@ -203,6 +209,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Image' 	=> Intervention\Image\Facades\Image::class,
+        'Tracker' 	=> PragmaRX\Tracker\Vendor\Laravel\Tracker::class,
         
 		'Debugbar' => Barryvdh\Debugbar\Facade::class,
 

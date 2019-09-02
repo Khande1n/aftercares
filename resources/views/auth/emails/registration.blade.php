@@ -1,9 +1,9 @@
-Hello Team,
+<p>Hello Team,</p>
 
-A new user has registered for our services.
+<p>A new user has registered for our services.</p>
 
-User Contact Details: {{$user->contact}}
+<p>User Contact Details: {{$user->contact}}</p>
 
-Give your best to serve the customer.
+<p>Give your best to serve the customer.</p>
 
-Enjoy!!!
+<p>Enjoy!!!</p>

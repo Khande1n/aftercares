@@ -55,12 +55,14 @@ class UserProfileController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
+     */ 
+     public function show($id)
+	{
+		$userData = User::find($id);
+		
+		return view('profile.show', compact('userData'));
+	}
+	
     /**
      * Show the form for editing the specified resource.
      *
